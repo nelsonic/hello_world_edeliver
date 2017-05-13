@@ -1,8 +1,8 @@
 APP="hello_world_edeliver"
 
-BUILD_HOST="52.232.127.28"
-BUILD_USER="azure"
-BUILD_AT="/home/azure/hello_world_edeliver/builds"
+BUILD_HOST="178.62.57.75"
+BUILD_USER="root"
+BUILD_AT="/home/root/hello_world_edeliver/builds"
 
 PRODUCTION_HOSTS="52.232.127.28"
 PRODUCTION_USER="azure"
