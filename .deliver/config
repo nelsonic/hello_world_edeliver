@@ -1,12 +1,12 @@
 APP="hello_world_edeliver"
 
-BUILD_HOST="52.232.127.28"
-BUILD_USER="azure"
-BUILD_AT="/home/azure/hello_world_edeliver/builds"
+BUILD_HOST="213.168.248.157"
+BUILD_USER="ubuntu"
+BUILD_AT="/home/ubuntu/hello_world_edeliver/builds"
 
-PRODUCTION_HOSTS="52.232.127.28"
-PRODUCTION_USER="azure"
-DELIVER_TO="/home/azure"
+PRODUCTION_HOSTS="213.168.248.157"
+PRODUCTION_USER="ubuntu"
+DELIVER_TO="/home/ubuntu"
 
 pre_erlang_clean_compile() {
   status "Installing NPM dependencies"
