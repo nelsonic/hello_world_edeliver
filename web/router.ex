@@ -18,6 +18,7 @@ defmodule HelloWorldEdeliver.Router do
 
     get "/", PageController, :index
     get "/_version", PageController, :git_revision_hash
+    get "/git_revision_hash", PageController, :git_revision_hash
   end
 
   # Other scopes may use custom stacks.
