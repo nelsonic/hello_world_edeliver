@@ -8,5 +8,6 @@ after_success:
   -in deploy_key.enc -out ~\/.ssh/deploy_key -d
 - chmod 600 deploy-key
 - mv deploy-key ~/.ssh/id_rsa
+- ls -lath ~/.ssh
 - ssh -o "StrictHostKeyChecking no" -q ubuntu@213.168.248.157 exit && echo $?
 - mix edeliver build release --verbose
