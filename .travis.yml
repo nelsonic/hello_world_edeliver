@@ -1,4 +1,5 @@
 language: elixir
+sudo: false
 elixir:
 - 1.4
 env:
@@ -14,4 +15,4 @@ before_install:
 - ls -lath
 - cat deploy_key.enc
 - openssl aes-256-cbc -K $encrypted_78685c75019b_key -iv $encrypted_78685c75019b_iv
-  -in deploy_key.enc -out ~\/.ssh/deploy_key -d
+  -in deploy_key.enc -out ~/.ssh/deploy_key -d
