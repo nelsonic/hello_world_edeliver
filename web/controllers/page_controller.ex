@@ -6,10 +6,17 @@ defmodule HelloWorldEdeliver.PageController do
   end
 
   def git_revision_hash(conn, _params) do
-    {cwd, _} = IO.inspect(System.cmd("pwd", []))
+    IO.inspect(System.cmd("pwd", []))
     {ls, _} = IO.inspect(System.cmd("ls", ["-a"]))
+
     ls = String.split(ls, "\n")
-    if Enum.member?(ls, ".git"), do: IO.inspect(System.cmd("pwd", [])), else: IO.inspect(System.cmd("cd", ["./builds"]))
+    IO.inspect ls
+
+    unless Enum.member?(ls, ".git") do
+      File.cd("./builds")
+      IO.inspect(System.cmd("pwd", []))
+    end
+
     {rev, _} = System.cmd("git", ["rev-parse", "HEAD"])
     IO.puts(String.replace(rev, "\n", ""))
     text conn, String.replace(rev, "\n", "")
