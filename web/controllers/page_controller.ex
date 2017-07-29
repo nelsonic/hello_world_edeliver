@@ -12,7 +12,7 @@ defmodule HelloWorldEdeliver.PageController do
     ls = String.split(ls, "\n")
     IO.inspect ls
 
-    unless Enum.member?(String.split(System.cmd("ls", ["-a"]), "\n"), ".git") do
+    unless Enum.member?(ls, ".git") do
       File.cd("./builds")
       IO.inspect(System.cmd("pwd", []))
     end

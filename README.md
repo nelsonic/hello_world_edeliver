@@ -17,3 +17,9 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
   * Docs: https://hexdocs.pm/phoenix
   * Mailing list: http://groups.google.com/group/phoenix-talk
   * Source: https://github.com/phoenixframework/phoenix
+
+```
+```
+mix edeliver build upgrade --auto-version=git-revision --from=$(curl http://213.168.248.157/_version) --to=$(git rev-parse HEAD~) --verbose
+```
+```
