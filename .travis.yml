@@ -9,8 +9,9 @@ after_success:
 - mv ~/.ssh/deploy_key ~/.ssh/id_rsa
 - ls -lath ~/.ssh
 - ssh -o "StrictHostKeyChecking no" -q ubuntu@213.168.248.157 exit && echo $?
+- /home/ubuntu/hello_world_edeliver/builds/_build/prod/rel/hello_world_edeliver/bin/hello_world_edeliver stop
 - mix edeliver build release --verbose
-- /home/ubuntu/hello_world_edeliver/builds/_build/prod/rel/hello_world_edeliver/bin/hello_world_edeliver restart
+- /home/ubuntu/hello_world_edeliver/builds/_build/prod/rel/hello_world_edeliver/bin/hello_world_edeliver start
 before_install:
 - openssl aes-256-cbc -K $encrypted_78685c75019b_key -iv $encrypted_78685c75019b_iv
   -in deploy_key.enc -out ~/.ssh/deploy_key -d
