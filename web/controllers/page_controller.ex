@@ -2,14 +2,16 @@ defmodule HelloWorldEdeliver.PageController do
   use HelloWorldEdeliver.Web, :controller
 
   def index(conn, _params) do
-    IO.inspect(System.cmd("pwd", []))
-    {rev, _} = System.cmd("git", ["rev-parse", "HEAD"])
-    IO.puts(String.replace(rev, "\n", ""))
     render conn, "index.html"
   end
 
   def git_revision_hash(conn, _params) do
+    {cwd, _} = IO.inspect(System.cmd("pwd", []))
+    {ls, _} = IO.inspect(System.cmd("ls", ["-a"]))
+    ls = String.split(ls, "\n")
+    if Enum.member?(ls, ".git"), do: IO.inspect(System.cmd("pwd", [])), else: IO.inspect(System.cmd("cd", ["./builds"]))
     {rev, _} = System.cmd("git", ["rev-parse", "HEAD"])
+    IO.puts(String.replace(rev, "\n", ""))
     text conn, String.replace(rev, "\n", "")
   end
 end
