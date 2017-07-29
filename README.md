@@ -19,7 +19,6 @@ Ready to run in production? Please [check our deployment guides](http://www.phoe
   * Source: https://github.com/phoenixframework/phoenix
 
 ```
-```
-mix edeliver build upgrade --auto-version=git-revision --from=$(curl http://213.168.248.157/_version) --to=$(git rev-parse HEAD~) --verbose
-```
+mix edeliver build upgrade --auto-version=git-revision --from=$(curl http://213.168.248.157/_version) --to=$(git rev-parse HEAD) --verbose
+mix edeliver deploy upgrade to production --version=$(.deliver/version.sh) --verbose
 ```

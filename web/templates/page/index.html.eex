@@ -1,4 +1,4 @@
 <div class="jumbotron">
   <h2><%= gettext "Welcome to %{name}", name: "The Jungle!" %></h2>
-  <p class="lead">Totes amazing!</p>
+  <p class="lead">Now for the Moment of Truth!</p>
 </div>
