@@ -8,6 +8,7 @@ defmodule HelloWorldEdeliver.PageController do
   def git_revision_hash(conn, _params) do
     IO.inspect(System.cmd("pwd", []))
     {ls, _} = IO.inspect(System.cmd("ls", ["-a"]))
+    IO.inspect ls
     ls = String.split(ls, "\n")
     IO.inspect ls
 
