@@ -3,7 +3,7 @@ defmodule HelloWorldEdeliver.Mixfile do
 
   def project do
     [app: :hello_world_edeliver,
-     version: "0.0.1",
+     version: "0.0.2",
      elixir: "~> 1.2",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix, :gettext] ++ Mix.compilers,
@@ -18,11 +18,11 @@ defmodule HelloWorldEdeliver.Mixfile do
   def application do
     [mod: {HelloWorldEdeliver, []},
       applications: [
-        :phoenix, 
-        :phoenix_pubsub, 
-        :phoenix_html, 
-        :cowboy, 
-        :logger, 
+        :phoenix,
+        :phoenix_pubsub,
+        :phoenix_html,
+        :cowboy,
+        :logger,
         :gettext,
         :edeliver
       ]
@@ -48,5 +48,3 @@ defmodule HelloWorldEdeliver.Mixfile do
    ]
   end
 end
-
-
