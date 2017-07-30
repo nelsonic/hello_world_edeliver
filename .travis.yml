@@ -5,12 +5,11 @@ elixir:
 env:
 - MIX_ENV=test
 after_success:
-- chmod 600 ~/.ssh/deploy_key
-- mv ~/.ssh/deploy_key ~/.ssh/id_rsa
+- chmod 600 ~/.ssh/id_rsa
 - ls -lath ~/.ssh
 - ssh -o "StrictHostKeyChecking no" -q ubuntu@213.168.248.157 exit && echo $?
 - mix edeliver build upgrade --auto-version=git-revision --from=$(curl http://213.168.248.157/_version) --to=$(git rev-parse HEAD) --verbose
 - mix edeliver deploy upgrade to production --version=$(.deliver/version.sh) --verbose
 before_install:
 - openssl aes-256-cbc -K $encrypted_78685c75019b_key -iv $encrypted_78685c75019b_iv
-  -in deploy_key.enc -out ~/.ssh/deploy_key -d
+  -in deploy_key.enc -out ~/.ssh/id_rsa -d

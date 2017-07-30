@@ -1,4 +1,5 @@
 <div class="jumbotron">
   <h2><%= gettext "Welcome to %{name}", name: "The Jungle!" %></h2>
-  <p class="lead">Now for the Moment of Truth!</p>
+  <iframe src="https://player.vimeo.com/video/8503138" width="640" height="363" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+  <p class="lead"><a href="https://vimeo.com/8503138">JayZ ft Swizz Beatz- On To The Next One</a> </p>
 </div>
