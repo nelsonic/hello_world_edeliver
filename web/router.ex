@@ -17,8 +17,7 @@ defmodule HelloWorldEdeliver.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    get "/_version", PageController, :git_revision_hash
-    get "/git_revision_hash", PageController, :git_revision_hash
+    get "/_version", GithubVersionController, :index
   end
 
   # Other scopes may use custom stacks.
