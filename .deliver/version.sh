@@ -1,8 +1,14 @@
 #!/bin/bash
-# https://stackoverflow.com/questions/59895/getting-the-source-directory-of-a-bash-script-from-within
+# get the current directory (.deliver) see: https://stackoverflow.com/questions/59895/
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-# echo $DIR
-FILENAME=$(ls -t "$DIR/releases" | head -n 1)
-NO_APP_NAME=$(echo $FILENAME | sed 's/hello_world_edeliver_//g')
-VERSION=$(echo $NO_APP_NAME | sed 's/.upgrade.tar.gz//g')
-echo $VERSION
+# list files by creation time (most recent first) and return the first one (latest release)
+FILENAME=$(ls -t "$DIR/releases" | head -n 1) # e.g: hello_world_edeliver_0.0.3+f012e96.upgrade.tar.gz
+
+# strip the name of the project from the FILENAME:
+NO_APP_NAME=$(echo $FILENAME | sed 's/hello_world_edeliver_//g') # e.g: 0.0.3+f012e96.upgrade.tar.gz
+
+ # remove the ".upgrade.tar.gz" suffix to leave just the version:
+VERSION=$(echo $NO_APP_NAME | sed 's/.upgrade.tar.gz//g') # e.g: 0.0.3+f012e96
+
+# return the upgrade version for use in "mix edeliver deploy upgrade" command:
+echo $VERSION # e.g: 0.0.3+f012e96
